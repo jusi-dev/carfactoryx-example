@@ -1,0 +1,37 @@
+const changeModalButtons = document.querySelectorAll("[data-modal-target]");
+const serviceContent = document.querySelectorAll(".service-item")
+
+changeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        button.classList.add('clicked');
+        button.addEventListener('animationend', () => {
+            changeModal(modal);
+            button.classList.remove('clicked');
+        })
+    })
+})
+
+function changeModal(modal) {
+    serviceContent.forEach(content => {
+        if (modal != content) {
+            content.classList.add('disappear');
+            content.addEventListener('animationend', () => {
+                if (content.classList.contains('disappear')) {
+                    content.style.display = "none";
+                    content.style.opacity = "0";
+                    content.classList.remove('disappear');
+                }
+            })
+        } else if (modal == content) {  
+            content.style.display = "flex";
+            content.classList.add('appear');
+            content.addEventListener('animationend', () => {
+                if (content.classList.contains('appear')) {
+                    content.style.opacity = "1";
+                    content.classList.remove('appear');
+                }
+            })
+        }
+    })
+};
