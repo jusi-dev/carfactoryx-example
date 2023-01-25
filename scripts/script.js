@@ -150,3 +150,34 @@ document.querySelectorAll(".nav-elem").forEach(n => n.addEventListener("click", 
     hamburger.classList.remove("active");
     mainnav.classList.remove("active");
 }));
+
+const textReview = document.querySelectorAll(".text-review");
+const textText = textReview.innerText;
+
+function checkOverflow() {
+    console.log("test");
+    textReview.forEach(div => {
+        if (div.scrollHeight > div.clientHeight) {
+            div.style.overflow = "hidden";
+            const showMore = div.nextSibling;
+            showMore.style.color = "yellow";
+        }
+    });
+}
+
+/*window.addEventListener('resize', checkOverflow);*/
+
+window.addEventListener('resize', function() {
+    var textDivs = document.querySelectorAll('.text-review');
+    var overflowDivs = document.querySelectorAll('.show-more-review');
+    for(var i = 0; i < textDivs.length; i++) {
+        if (textDivs[i].clientHeight < textDivs[i].scrollHeight) {
+          overflowDivs[i].style.display = "block";
+          textDivs[i].style.overflow = "hidden";
+        } else {
+          overflowDivs[i].style.display = "none";
+          textDivs[i].style.overflow = "auto";
+        }
+    }
+});
+
