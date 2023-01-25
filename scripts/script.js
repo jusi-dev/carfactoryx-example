@@ -93,10 +93,10 @@ reviewBtnLeft.addEventListener('click', () => {
     reviewSpace.scrollLeft -= 400;
 })
 
-/*window.onload = function showNote() {
+window.onload = function showNote() {
     notiModal.classList.add('active');
     overlay.classList.add('active');
-}*/
+}
 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -126,7 +126,7 @@ window.addEventListener('scroll', function() {
       navBar.style.background = "#FF4646";
       navBar.style.padding = "15px 0px";
       if (this.window.matchMedia("(max-width: 1024px)").matches){
-        navMenu.style.margin = "0px";
+        navMenu.style.marginTop = "-10px";
       }
     } else {
       navBar.style.background = "none";

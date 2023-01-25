@@ -756,6 +756,7 @@ footer {
 
     .nav-menu.active {
         left: 0;
+        padding-left: 0;
     }
 
     .hamburger-bar {
@@ -778,11 +779,20 @@ footer {
     .service-selection {
         width: 100%;
         border-radius: 30px 30px 0 0;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 0px;
     }
 
     .service-btn {
-        width: 40%;
-        padding: 28px 4px;
+        width: 30%;
+        font-size: 11px;
+        padding: 20px 4px;
+    }
+
+    .item-btn {
+        width: 50%;
+        padding: 25px 0px;
     }
 
     .service-btn:nth-child(1) {
@@ -817,7 +827,7 @@ footer {
     .mobile-fixer {
         position: absolute;
         bottom: 0;
-        height: 90px;
+        height: 100px;
         width: 100vw;
         background-color: #FCFCFC;
         transform: translateY(100%);
