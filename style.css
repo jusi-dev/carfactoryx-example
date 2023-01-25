@@ -58,13 +58,14 @@ p .xsmall {
     justify-content: center;
     align-items: center;
     padding: 50px 0px;
+    transition: 0.5s ease-in-out;
 }
 
 .sticky .logo {
     padding-left: 50px;
 }
 
-.sticky ul {
+.nav-menu {
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -81,6 +82,32 @@ p .xsmall {
 .sticky li a {
     text-decoration: none;
     color: var(--terity-font-color);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-wrapper {
+    display: inherit;
+    list-style: inherit;
+}
+
+.hamburger-bar {
+    margin-left: auto;
+    padding-right: 50px;
+    display: none;
+}
+  
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
 }
 
 .logo {
@@ -328,6 +355,7 @@ p .xsmall {
     -o-background-size: cover;
     background-size: cover;
     overflow-x: hidden;
+    overflow-y: hidden;
     margin-bottom: 5%;
 }
 
@@ -336,7 +364,7 @@ p .xsmall {
     right: 0;
     bottom: 0;
     border-top: 6vw solid #FCFCFC;
-    border-right: 102vw solid transparent;
+    border-right: 107vw solid transparent;
 }
 
 .slice-container-btm {
@@ -349,8 +377,8 @@ p .xsmall {
     position: relative;
     right: 0;
     bottom: 0;
-    border-bottom: 26vw solid #FCFCFC;
-    border-left: 346vw solid transparent;
+    border-bottom: 13vw solid #FCFCFC;
+    border-left: 211vw solid transparent;
 }
 
 .review-container {
@@ -362,10 +390,11 @@ p .xsmall {
 
 .review-space {
     display: flex;
-    height: 35vh;
+    height: 31vh;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    padding-bottom: 50px;
 }
 
 .review {
@@ -474,6 +503,11 @@ p .xsmall {
     height: auto;
 }
 
+.location-container iframe {
+    width: 90%;
+    height: 500px;
+}
+
 .photo-section {
     padding-bottom: 10vh;
 }
@@ -572,7 +606,7 @@ footer {
 }
 
 .icons-nav img {
-    height: 60px;
+    height: 50px;
     width: auto;
 }
 
@@ -588,15 +622,6 @@ footer {
 .credits-footer a {
     color: var(--terity-font-color);
 }
-
-@media screen and (max-width: 1024px) {
-    .image-grid {
-        --num-cols: 2;
-        --row-height: 200px
-    }
-}
-
-
 
 #overlay {
     position: fixed;
@@ -681,8 +706,97 @@ footer {
     padding-right: 1.5em;
 }
 
+/* LAPTOPS / TABLETS */
+@media only screen and (max-width: 1024px) {
+    .image-grid {
+        --num-cols: 2;
+        --row-height: 200px
+    }
 
+    /* BURGER SHOULD START HERE */
+    .hamburger {
+        display: block;
+    }
 
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -200%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        margin: 50px 0px;
+    }
+
+    .nav-menu li {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger-bar {
+        display: block;
+    }
+}
+
+/* LNADSCAPE TABLETS */
+@media only screen and (max-width: 768px) {
+    .contact-ul {
+        margin-left: 40px;
+    }
+
+    .socials-ul {
+        margin-left: 40px;
+    }
+}
+
+/* PORTRAIT TABLETS AND LARGE PHONES */
+@media only screen and (max-width: 600px) {
+    .navigation-footer {
+        flex-direction: column;
+    }
+
+    .contact-ul {
+        margin-left: 0;
+        margin-top: 3%;
+    }
+
+    .socials-ul {
+        margin-left: 0;
+        margin-top: 3%;
+    }
+
+    .icons-nav {
+        display: flex;
+    }
+
+    .image-grid {
+        --num-cols: 1;
+        --row-height: 200px
+    }
+}
+
+/* PHONES */
+@media only screen and (max-width: 599px) {
+
+}
 
 
 

@@ -3,6 +3,7 @@ const serviceContent = document.querySelectorAll(".service-item");
 const service1 = document.querySelector("#service-1");
 const service2 = document.querySelector("#service-2");
 const service3 = document.querySelector("#service-3");
+const navBar = document.querySelector(".sticky");
 var rightElemId;
 var animationDone = true;
 
@@ -21,6 +22,9 @@ const reviewNr8 = document.querySelector("#review8");
 const notiModal = document.querySelector("#modal-information");
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 changeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -89,10 +93,10 @@ reviewBtnLeft.addEventListener('click', () => {
     reviewSpace.scrollLeft -= 400;
 })
 
-window.onload = function showNote() {
+/*window.onload = function showNote() {
     notiModal.classList.add('active');
     overlay.classList.add('active');
-}
+}*/
 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -113,3 +117,36 @@ function closeModal(modal) {
     modal.classList.remove('active');
     overlay.classList.remove('active');
 };
+
+// Add the background color to the nav bar after scrolling
+window.addEventListener('scroll', function() {
+    var scrollPos = window.scrollY;
+    // add a class to the body element to change the background color
+    if (scrollPos > 300) {
+      navBar.style.background = "#FF4646";
+      navBar.style.padding = "15px 0px";
+      if (this.window.matchMedia("(max-width: 1024px)").matches){
+        navMenu.style.margin = "0px";
+      }
+    } else {
+      navBar.style.background = "none";
+      navBar.style.padding = "50px 0px";
+      if (this.window.matchMedia("(max-width: 1024px)").matches){
+        navMenu.style.margin = "50px 0px";
+      }
+    }
+});
+
+/*                                    */
+        /* BURGER MENU */
+/*                                    */
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-elem").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mainnav.classList.remove("active");
+}));
