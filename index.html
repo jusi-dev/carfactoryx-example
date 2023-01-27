@@ -97,6 +97,7 @@
                             <div class="user-review"><p class="xsmall">Justin W.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review2">
@@ -105,6 +106,7 @@
                             <div class="user-review"><p class="xsmall">Sascha H.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review3">
@@ -113,6 +115,7 @@
                             <div class="user-review"><p class="xsmall">Max M.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review4">
@@ -121,6 +124,7 @@
                             <div class="user-review"><p class="xsmall">Anonym</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review5">
@@ -129,6 +133,7 @@
                             <div class="user-review"><p class="xsmall">Alain S.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review6">
@@ -137,6 +142,7 @@
                             <div class="user-review"><p class="xsmall">Luca L.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review7">
@@ -145,6 +151,7 @@
                             <div class="user-review"><p class="xsmall">John J.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                     <div class="review" id="review8">
@@ -153,6 +160,7 @@
                             <div class="user-review"><p class="xsmall">Otto O.</p></div>
                             <div class="text-review"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus recusandae deserunt voluptatibus itaque vel. Aliquam fugit necessitatibus dolore illum asperiores?</p></div>
                             <div class="show-more-review"><p>Show more</p></div>
+                            <div class="show-less-review"><p>Show less</p></div>
                         </div>
                     </div>
                 </div>
@@ -178,13 +186,70 @@
             </div>
             <div class="image-container">
                 <div class="image-grid">
-                    <img class="image-grid-row-3" src="./img/gallery/photo-2.jpg" alt="car picture">
-                    <img src="./img/gallery/photo-1.jpg" alt="car picture">
-                    <img class="image-grid-row-2" src="./img/gallery/photo-5.jpg" alt="car picture">
-                    <img src="./img/gallery/photo-3.jpg" alt="car picture">
-                    <img src="./img/gallery/photo-4.jpg" alt="car picture">
-                    <img src="./img/gallery/photo-6.jpg" alt="car picture">
+                    <img data-image="photo1" class="imageModal image-grid-row-3" src="./img/gallery/photo-2.jpg" alt="car picture">
+                    <img data-image="photo2" class="imageModal" src="./img/gallery/photo-1.jpg" alt="car picture">
+                    <img data-image="photo3" class="imageModal image-grid-row-2" src="./img/gallery/photo-5.jpg" alt="car picture">
+                    <img data-image="photo4" class="imageModal" src="./img/gallery/photo-3.jpg" alt="car picture">
+                    <img data-image="photo5" class="imageModal" src="./img/gallery/photo-4.jpg" alt="car picture">
+                    <img data-image="photo6" class="imageModal" src="./img/gallery/photo-6.jpg" alt="car picture">
                 </div>
+                <div class="image-modal-container">
+                    <div class="imageBig" id="photo1">
+                        <div class="image-header">
+                            <div class="title">Mockup Logo T-Shirt</div>  
+                            <button data-close-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                           <img src="./images/schwingfest_burgdorf.jpg">
+                        </div>
+                    </div>
+                    <div class="imageBig" id="photo2">
+                        <div class="image-header">
+                            <div class="title">Mockup Logo T-Shirt</div>  
+                            <button data-close-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="image-body">
+                            <img src="./images/schwingfest_burgdorf.jpg">
+                        </div>
+                    </div>
+                    <div class="imageBig" id="photo3">
+                        <div class="image-header">
+                            <div class="title">Mockup Logo T-Shirt</div>  
+                            <button data-close-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="image-body">
+                            <img src="./images/schwingfest_burgdorf.jpg">
+                        </div>
+                    </div>
+                    <div class="imageBig" id="photo4">
+                        <div class="image-header">
+                            <div class="title">Mockup Logo T-Shirt</div>  
+                            <button data-close-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="image-body">
+                            <img src="./images/schwingfest_burgdorf.jpg">
+                        </div>
+                    </div>
+                    <div class="imageBig" id="photo5">
+                        <div class="image-header">
+                            <div class="title">Mockup Logo T-Shirt</div>  
+                            <button data-close-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="image-body">
+                            <img src="./images/schwingfest_burgdorf.jpg">
+                        </div>
+                    </div>
+                    <div class="imageBig" id="photo6">
+                        <div class="image-header">
+                            <div class="title">Mockup Logo T-Shirt</div>  
+                           <button data-close-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="image-body">
+                            <img src="./images/schwingfest_burgdorf.jpg">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             
         </section>

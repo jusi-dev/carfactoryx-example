@@ -10,17 +10,18 @@ var animationDone = true;
 const reviewSpace = document.querySelector(".review-space");
 const reviewBtnLeft = document.querySelector("#review-left-btn");
 const reviewBtnRight = document.querySelector("#review-right-btn");
-const reviewNr1 = document.querySelector("#review1");
+/*const reviewNr1 = document.querySelector("#review1");
 const reviewNr2 = document.querySelector("#review2");
 const reviewNr3 = document.querySelector("#review3");
 const reviewNr4 = document.querySelector("#review4");
 const reviewNr5 = document.querySelector("#review5");
 const reviewNr6 = document.querySelector("#review6");
 const reviewNr7 = document.querySelector("#review7");
-const reviewNr8 = document.querySelector("#review8");
+const reviewNr8 = document.querySelector("#review8");*/
 
 const notiModal = document.querySelector("#modal-information");
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const closeModalBtn = document.querySelectorAll('[data-close-btn]');
 const overlay = document.getElementById('overlay');
 
 const hamburger = document.querySelector(".hamburger");
@@ -76,14 +77,6 @@ service3.classList.add('hide');
 let currentElement = 0;
 let reviewElements = document.querySelector("#review");
 
-/*reviewBtnRight.addEventListener('click', () => {
-    if (currentElement <= 8) {
-        currentElement++;
-        reviewElements.scrollIntoView({ 
-            behavior: 'smooth'
-          });
-    }
-})*/
 
 reviewBtnRight.addEventListener('click', () => {
     reviewSpace.scrollLeft += 300;
@@ -92,6 +85,10 @@ reviewBtnRight.addEventListener('click', () => {
 reviewBtnLeft.addEventListener('click', () => {
     reviewSpace.scrollLeft -= 400;
 })
+
+/*                                    */
+        /* Start Message */
+/*                                    */
 
 window.onload = function showNote() {
     notiModal.classList.add('active');
@@ -117,6 +114,10 @@ function closeModal(modal) {
     modal.classList.remove('active');
     overlay.classList.remove('active');
 };
+
+/*                                    */
+        /* Navigation Scroll Handler */
+/*                                    */
 
 // Add the background color to the nav bar after scrolling
 window.addEventListener('scroll', function() {
@@ -144,6 +145,8 @@ window.addEventListener('scroll', function() {
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
+    navBar.classList.toggle("active");
+    navBar.style.removeProperty("background");
 });
 
 document.querySelectorAll(".nav-elem").forEach(n => n.addEventListener("click", () => {
@@ -154,7 +157,7 @@ document.querySelectorAll(".nav-elem").forEach(n => n.addEventListener("click", 
 const textReview = document.querySelectorAll(".text-review");
 const textText = textReview.innerText;
 
-function checkOverflow() {
+/*function checkOverflow() {
     console.log("test");
     textReview.forEach(div => {
         if (div.scrollHeight > div.clientHeight) {
@@ -163,13 +166,20 @@ function checkOverflow() {
             showMore.style.color = "yellow";
         }
     });
-}
+}*/
 
 /*window.addEventListener('resize', checkOverflow);*/
 
-window.addEventListener('resize', function() {
-    var textDivs = document.querySelectorAll('.text-review');
-    var overflowDivs = document.querySelectorAll('.show-more-review');
+var overflowDivs = document.querySelectorAll('.show-more-review');
+var shrinkBtn = document.querySelectorAll('.show-less-review');
+var textDivs = document.querySelectorAll('.text-review');
+var isActive = 0;
+const review = document.querySelector('.review');
+
+window.addEventListener('resize', overflowChecker);
+window.addEventListener('load', overflowChecker);
+
+function overflowChecker() {
     for(var i = 0; i < textDivs.length; i++) {
         if (textDivs[i].clientHeight < textDivs[i].scrollHeight) {
           overflowDivs[i].style.display = "block";
@@ -179,5 +189,69 @@ window.addEventListener('resize', function() {
           textDivs[i].style.overflow = "auto";
         }
     }
-});
+}
 
+overflowDivs.forEach(button => {
+    button.addEventListener('click', () => {
+        const parent = button.parentNode;
+        const textRev = parent.querySelector('.text-review');
+        const showLess = parent.querySelector('.show-less-review');
+        const reviewParent = parent.parentNode;
+        button.style.display = "none";
+        showLess.style.display = "block";
+        isActive += 1;
+        expandReview(textRev, reviewParent);
+    })
+})
+
+shrinkBtn.forEach(button => {
+    button.addEventListener('click', () => {
+        const parent = button.parentNode;
+        const textRev = parent.querySelector('.text-review');
+        const showMore = parent.querySelector('.show-more-review');
+        const reviewParent = parent.parentNode;
+        button.style.display = "none";
+        showMore.style.display = "block";
+        isActive -= 1;
+        shrinkReview(textRev, reviewParent);
+    })
+})
+
+function expandReview(textRev, reviewParent) {
+    textRev.style.height = "auto";
+    textRev.style.overflow = "visible";
+    reviewParent.style.height = "auto";
+    reviewParent.style.marginBottom = "0";
+    reviewSpace.style.height = "auto";
+}
+function shrinkReview(textRev, reviewParent) {
+    textRev.style.removeProperty('height');
+    textRev.style.overflow = "hidden";
+    reviewParent.style.removeProperty('height');
+    reviewParent.style.removeProperty('marginBottom');
+    if (isActive == 0) {
+        reviewSpace.style.removeProperty('height');
+    }
+}
+
+const openImage = document.querySelectorAll('[data-image]');
+
+openImage.forEach(button => {
+    button.addEventListener('click', () => {
+        const imageTarget = document.querySelector('#' + button.dataset.image);
+        console.log(button.dataset.image);
+        openModal(imageTarget);
+    })
+})
+
+function openModal(imageTarget) {
+    imageTarget.classList.add('active');
+    overlay.classList.add('active');
+}
+
+closeModalBtn.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.imageBig');
+      closeModal(modal);
+    })
+});
