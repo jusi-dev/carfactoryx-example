@@ -235,16 +235,18 @@ function shrinkReview(textRev, reviewParent) {
 }
 
 const openImage = document.querySelectorAll('[data-image]');
+const imageLeft = document.querySelectorAll('.imageLeft');
+const imageRight = document.querySelectorAll('.imageRight');
 
 openImage.forEach(button => {
     button.addEventListener('click', () => {
         const imageTarget = document.querySelector('#' + button.dataset.image);
-        console.log(button.dataset.image);
         openModal(imageTarget);
     })
 })
 
 function openModal(imageTarget) {
+    if (imageTarget == null) return;
     imageTarget.classList.add('active');
     overlay.classList.add('active');
 }
@@ -253,5 +255,25 @@ closeModalBtn.forEach(button => {
     button.addEventListener('click', () => {
       const modal = button.closest('.imageBig');
       closeModal(modal);
+    })
+});
+
+imageRight.forEach(button => {
+    button.addEventListener('click', () => {
+        const activeModal = button.closest('.imageBig');
+        const imageSibling = activeModal.nextElementSibling;
+        closeModal(activeModal);
+        openModal(imageSibling);
+    })
+});
+
+imageLeft.forEach(button => {
+    button.addEventListener('click', () => {
+        const activeModal = button.closest('.imageBig');
+        const imageSibling = activeModal.previousElementSibling;
+        console.log(activeModal);
+        console.log(imageSibling);
+        closeModal(activeModal);
+        openModal(imageSibling);
     })
 });
