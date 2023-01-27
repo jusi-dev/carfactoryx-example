@@ -261,7 +261,10 @@ closeModalBtn.forEach(button => {
 imageRight.forEach(button => {
     button.addEventListener('click', () => {
         const activeModal = button.closest('.imageBig');
-        const imageSibling = activeModal.nextElementSibling;
+        let imageSibling = activeModal.nextElementSibling;
+        if (imageSibling === null){
+            imageSibling = activeModal.parentNode.firstElementChild;
+        }
         closeModal(activeModal);
         openModal(imageSibling);
     })
@@ -270,9 +273,10 @@ imageRight.forEach(button => {
 imageLeft.forEach(button => {
     button.addEventListener('click', () => {
         const activeModal = button.closest('.imageBig');
-        const imageSibling = activeModal.previousElementSibling;
-        console.log(activeModal);
-        console.log(imageSibling);
+        let imageSibling = activeModal.previousElementSibling;
+        if (imageSibling === null) {
+            imageSibling = activeModal.parentNode.lastElementChild;
+        }
         closeModal(activeModal);
         openModal(imageSibling);
     })

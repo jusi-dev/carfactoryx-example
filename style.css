@@ -377,7 +377,7 @@ p .xsmall {
     background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .vertical-slice-top {
@@ -617,7 +617,6 @@ p .xsmall {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
 }
   
 .image-header .title {
@@ -648,9 +647,8 @@ p .xsmall {
 }
   
 .image-body img {
-    width: 80%;
+    width: 40%;
     height: auto;
-    /* padding-right: 3em; */
 }
 
 .imageLeft {
@@ -937,6 +935,12 @@ footer {
         font-size: 13px;
     }
 
+    .hero-section {
+        background: url("./img/background.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
     .mobile-fixer {
         position: absolute;
         bottom: 0;
@@ -968,6 +972,11 @@ footer {
     .image-grid {
         --num-cols: 1;
         --row-height: 200px
+    }
+
+    .image-body img {
+        width: 85%;
+        height: auto;
     }
 
     .section-header {
