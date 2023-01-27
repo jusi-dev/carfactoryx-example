@@ -307,6 +307,7 @@ p .xsmall {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center;
 }
 
 #service-img2 {
@@ -315,6 +316,7 @@ p .xsmall {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center;
 }
 
 #service-img3 {
@@ -323,6 +325,7 @@ p .xsmall {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-position: center;
 }
 
 .service-item h3 {
