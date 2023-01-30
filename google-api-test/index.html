@@ -11,12 +11,13 @@
     <!-- Load the API Client Library -->
     <script src="https://apis.google.com/js/platform.js"></script>
     <script>
+        alert("Test");
       gapi.load("client", function() {
         gapi.client
           .init({
             apiKey: "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU",
             discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-            clientId: "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com",
+            clientId: "108599852849179048885",
             scope: "https://www.googleapis.com/auth/calendar"
           })
           .then(function() {
