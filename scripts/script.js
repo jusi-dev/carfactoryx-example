@@ -151,7 +151,7 @@ hamburger.addEventListener("click", () => {
 
 document.querySelectorAll(".nav-elem").forEach(n => n.addEventListener("click", () => {
     hamburger.classList.remove("active");
-    mainnav.classList.remove("active");
+    /*mainnav.classList.remove("active");*/
 }));
 
 const textReview = document.querySelectorAll(".text-review");
