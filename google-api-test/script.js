@@ -10,7 +10,7 @@ fetch('./carfactoryx-example-bfb1c69cb874.json')
     API_KEY = data.apiKey;
 });
 
-API_KEY = "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";
+API_KEY = "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU";
 
   gapi.load("client", function () {
     gapi.client.init({
