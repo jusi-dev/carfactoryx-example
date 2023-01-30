@@ -11,7 +11,17 @@
     <!-- Load the API Client Library -->
     <script src="https://apis.google.com/js/platform.js"></script>
     <script>
-      gapi.load("client:auth2", function() {
+        window.gapi.client
+            .init({
+                clientId: "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com",
+                apiKey: "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU",
+                discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+                scope: "https://www.googleapis.com/auth/calendar"
+            })
+        
+        gapi.load('client:auth2');
+
+      /*gapi.load("client:auth2", function() {
         gapi.client
           .init({
             apiKey: "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU",
@@ -32,7 +42,7 @@
                 listEvents();
               });
           });
-      });
+      });*/
 
       function listEvents() {
         gapi.client.calendar.events
