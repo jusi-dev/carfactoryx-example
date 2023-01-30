@@ -8,9 +8,49 @@
     <p>Google Calendar API Quickstart</p>
     <div id="content"></div>
 
-    <script src="https://apis.google.com/js/client.js"></script>
-    <script async defer src="https://apis.google.com/js/api.js"></script>
-    <script async defer src="https://accounts.google.com/gsi/client"></script>
-    <script async defer src="./script.js"></script>
+    <!-- Load the API client library -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      // Load the API and make an API call.  Display the results on the screen.
+      gapi.load('client:auth2', function() {
+        gapi.client.init({
+          apiKey: 'AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU',
+          clientId: '90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com',
+          discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+          scope: 'https://www.googleapis.com/auth/calendar.readonly'
+        }).then(function() {
+          return gapi.client.calendar.events.list({
+            'calendarId': 'primary',
+            'timeMin': (new Date()).toISOString(),
+            'showDeleted': false,
+            'singleEvents': true,
+            'maxResults': 10,
+            'orderBy': 'startTime'
+          });
+        }).then(function(response) {
+          var events = response.result.items;
+          appendPre('Upcoming events:');
+
+          if (events.length > 0) {
+            for (i = 0; i < events.length; i++) {
+              var event = events[i];
+              var when = event.start.dateTime;
+              if (!when) {
+                when = event.start.date;
+              }
+              appendPre(event.summary + ' (' + when + ')')
+            }
+          } else {
+            appendPre('No upcoming events found.');
+          }
+        });
+      });
+
+      function appendPre(message) {
+        var pre = document.getElementById('content');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+    </script>
   </body>
 </html>
