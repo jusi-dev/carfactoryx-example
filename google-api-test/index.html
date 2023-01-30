@@ -14,9 +14,9 @@
       gapi.load("client:auth2", function() {
         gapi.client
           .init({
-            apiKey: "<MY-API-KEY",
+            apiKey: "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU",
             discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-            clientId: "<MY-CLIENT-ID>",
+            clientId: "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com>",
             plugin_name: "Booking-service",
             scope: "https://www.googleapis.com/auth/calendar"
           })
@@ -26,7 +26,7 @@
               .signIn({
                 prompt: "consent",
                 client_id:
-                  "MY-CLIENT-ID"
+                  "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com"
               })
               .then(function() {
                 // List events on the calendar
