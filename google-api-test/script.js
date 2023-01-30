@@ -1,4 +1,4 @@
-const CLIENT_ID = '112745235051544508065';
+const CLIENT_ID = '90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com';
 const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 const SCOPES = 'https://www.googleapis.com/auth/calendar';
 
@@ -8,7 +8,9 @@ fetch('./carfactoryx-example-bfb1c69cb874.json')
   .then(response => response.json())
   .then(data => {
     API_KEY = data.apiKey;
-  });
+});
+
+API_KEY = "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";
 
   gapi.load("client", function () {
     gapi.client.init({
