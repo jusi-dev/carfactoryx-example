@@ -9,22 +9,28 @@
     <div id="content"></div>
 
     <!-- Load the API Client Library -->
-    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
     <script>
-        alert("LOLOL");
       gapi.load("client:auth2", function() {
-        gapi.client.init({
-          apiKey: "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU",
-          discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-          clientId: "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com",
-          scope: "https://www.googleapis.com/auth/calendar"
-        });
-
-        gapi.auth2
-          .getAuthInstance()
-          .signIn()
+        gapi.client
+          .init({
+            apiKey: "AIzaSyDJxwqiJIaiZlQYkZ3eKGE3dHUKGQnIJJU",
+            discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+            clientId: "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com",
+            scope: "https://www.googleapis.com/auth/calendar"
+          })
           .then(function() {
-            listEvents();
+            gapi.auth2
+              .getAuthInstance()
+              .signIn({
+                prompt: "consent",
+                client_id:
+                  "90878435704-20ri6385ar43hmr1rp7mieimsg87b1ku.apps.googleusercontent.com"
+              })
+              .then(function() {
+                // List events on the calendar
+                listEvents();
+              });
           });
       });
 
