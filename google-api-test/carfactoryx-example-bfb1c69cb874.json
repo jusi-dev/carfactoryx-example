@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "carfactoryx-example",
+  "private_key_id": "bfb1c69cb87465729cd158807da837ff5a23284e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDC41c28E4r+tae\ndPlR1BdIpHt74bdGaz8zPBq4BDtGXQILKz9EPbb3++MnTmZKcneiWBCV3T22i4G9\neHKdnwxYv+ylUt2vya0hrT1we47FFtJ5wM48oYwlrdhxtS7q2Edt/FnUPX9rneeX\npMipUUIVx/T9RhidyvynmyR8nt9fwKRerPGSnPfVHPqK8DQ7CTMqTw3LGk8FzqsO\nNWpOzWcLzTC5yOgJYyW1Ir9Cbi4M8ncmsQy6sS2ckOCorNU1ntdWHiX9tHGr4u3z\nASfVoWWEHlsoZroTCIu5yp/l+O6c3QXrLHrbQZurE0RtXSuOBKD47KJgZ3fSHioV\nlqIfLsXBAgMBAAECggEAFzd8v6oSW0w/SRKSU7HlMYg2wGP8Bhg8p96J0vuIvDHU\nTn77wyYUUqff6wzR7siC1q+QZOoTB1jIlJ5xY7RQ2jnITUxOkI8sCuOtJWXyyik/\n2wqhsbi6Y2VkcEIEsYF2cPSBFwxZzk46CryyEvRVNRcPE8/H8Emq86SYd314YDBI\nz99qhIqJtZq7+jUNfORCRMdG5jQtghrPUNTUBovLjqHyrw+H7vedhaTAV7AMxZy9\nIt6hVmvVLxRywQNwwfYEmxGf+siZiUzm2nHTZgFu2tRVf9jcPi84CbrHttrq6s6a\n9VLg3G8FRnY/hfVLCmNtvfqx5u/yHp0SidwqFB1JqQKBgQDzVqyUcJ5JtD5m6lq4\nN/y/RyYQ6NfSDLUDt+Ey12sDcCYaafTjnmTjuOMg4ajXA35+gVR3rPhPTfBjl4vI\nFbO2VOEbKxKkovsctQKUz4ecpnFUpPe/lETiPff2+81PXHHhb0rWVXVNKQdvDdfs\nDy74L6P6bOJAJimYZw6HXjGyrwKBgQDNB0tfsRkfUE//vJ49A4mxbq8m5Lz/+DGL\nJl0mrTsaieACttipo8ciGCeNLovKOiwz8UnR2twY8upQgy/mzV9RJe737CrJJaMF\nAXbaHg27yQBSg5MhswFHCjDUAyhDXLLqeGk7nkNXv/JpOdnmbWAHCxFEafCaEO4r\ni0rgk2jqjwKBgQDUf5lAG8Su2n8wAnHss7+9DhXY6G0oGj6tG5PGgUYLf5FWubbI\nW1cBYkC+QzHdaki5kpk/1UYWgxps7jd8KC+DB0Z5IjkqmsUtgYjaiQyFKPiJEXLk\n00cAR1tWTPgy2Kj+U+EHoSNJmY3LVkx78Zpz066gDxvZJzplw4F1hzVhMwKBgBir\nvggfuVQpR9cQDUJuQI1XMkBN2eg7J0sFLMRQqAIDgS8SbXPMP1P88BVu+mc1JMiD\nSky0NzPRVxylDIiLQeLz25N9mZBmtP0PNgv8/c4Q27cSGgw+C/NOaJ26W4fviZ/p\nKVCBNL1EXZkH2w59LsbqMAO5c7g2PVKECliHpGJFAoGBANpY76xpdua5o1OAbQqv\nVfIEsNnGGINs9YMqGEKJJEIvGWwSsZtOlO516sKYlYBsCOPNNqV9Zs5TkNsHWEXc\n8KnVru7tMCks3Pni9aCnbmNFxgbLC5tH0TPqiGfZpcFHlZQRoL9DES00xDJqz6ns\njfqT+fZDrldMEKPnXKy7nXc2\n-----END PRIVATE KEY-----\n",
+  "client_email": "carfactoryx-calendar@carfactoryx-example.iam.gserviceaccount.com",
+  "client_id": "112745235051544508065",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/carfactoryx-calendar%40carfactoryx-example.iam.gserviceaccount.com"
+}
