@@ -56,7 +56,7 @@
                         <p>Wash, Dry & Polish</p>
                         <p class="small">Enjoy all-round care for your car with our "Wash, Dry & Polish" service. Your vehicle will shine like never before!</p>
                         <p class="price">250.- CHF</p>
-                        <button>Book now</button>
+                        <button id="service-3-book">Book now</button>
                     </div>
                 </div>
             </div>
@@ -66,10 +66,40 @@
                 <h2>Booking</h2>
                 <div class="underline-h2"></div>
             </div>
+            <div class="book-container-con">
+                <div class="booking-container">
+                    <div class="book-service">
+                        <div class="book-overview">
+                            <h3>Your services:</h3>
+                            <ul class="selected-service">
+                                
+                            </ul>
+                        </div>
+                        <div class="book-information">
+                            <label for="fname">Full name:</label>
+                            <input type="text" id="fname" name="fname" placeholder="Max Mustermann" required>
+                            <label for="mail">E-Mail:</label>
+                            <input type="email" id="mail" name="mail" placeholder="max.mustermann@gmail.com" required>
+                            <label for="tel">Phone number:</label>
+                            <input type="tel" id="tel" name="tel" placeholder="+41 76 691 75 63" required>
+                            <label for="date">Date:</label>
+                            <input type="date" id="date" name="date" required>
+                            <label for="time">Time:</label>
+                            <input type="time" id="time" name="time" required>
+                            <button id="submitService">Submit</button>
+                        </div>
+                    </div>
+                    <div class="book-important">
+                        
+                    </div>
+                </div>
+            </div>
         </section>
         <seciton class="image-section">
             <div class="vertical-slice-top"></div>
             <div class="slice-container-btm"><div class="vertical-slice-bottom"></div></div>
         </seciton>
         <script src="./scripts/main.js"></script>
+        <script src="./scripts/bookingHandler.js"></script>
+        <script src="./scripts/calendarHandler.js"></script>
     </body>

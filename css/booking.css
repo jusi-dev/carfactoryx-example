@@ -85,3 +85,58 @@ p.price {
     color: white;
     font-size: 5em;
 }
+
+.book-container-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.booking-container {
+    display: flex;
+    width: 70vw;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+}
+
+.book-service {
+    background-color: var(--primary-color);
+    border-radius: 25px 0px 0px 25px;
+    color: var(--quaternary-font-color);
+    padding: 30px 20px;
+    width: 35%;
+}
+
+.book-service h3 {
+    color: var(--quaternary-font-color);
+}
+
+.book-service input {
+    margin-bottom: 10px;
+}
+
+.book-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-information label {
+    margin-top: 10px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.book-information input{
+    height: 30px;
+}
+
+.book-information input:nth-child(10){
+    margin-bottom: 50px;
+}
+
+.book-information button {
+    height: 60px;
+    background-color: var(--terity-font-color);
+    border-radius: 10px;
+}
