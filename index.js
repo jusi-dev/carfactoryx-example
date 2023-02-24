@@ -52,9 +52,8 @@ async function saveCredentials(client) {
   await fs.writeFile(TOKEN_PATH, payload);
 }
 
-/**
+/*
  * Load or request or authorization to call APIs.
- *
  */
 async function authorize() {
   let client = await loadSavedCredentialsIfExist();
@@ -114,20 +113,25 @@ async function listEvents(auth) {
     }
     console.log('Event created: %s', event.data.htmlLink);
   });
-}
+};
 
-var http = require('http');
-var url = require('url');
-    http.createServer(function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        var q = url.parse(req.url, true).query;
-        serviceName = q.serviceReq;
-        serviceDescription = q.serviceDesc;
-        serviceDate = q.serviceDate;
-        serviceTime = q.serviceTime;
-        console.log("ServiceTime is: "+serviceTime);
-        authorize().then(listEvents).catch(console.error);
-        res.end();
-    }).listen(9090);
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/api', (req, res) => {
+  const q = req.query;
+
+  serviceName = q.serviceReq
+  serviceDescription = q.serviceDesc;
+  serviceDate = q.serviceDate;
+  serviceTime = q.serviceTime;
+
+  authorize().then(listEvents).catch(console.error);
+});
+
+app.listen(port, () => {
+  console.log(`App is listening on port ${port}`);
+});
 
 console.log("Backend is ready");

@@ -2,9 +2,11 @@ const bookSerive3 = document.querySelector('#service-3-book');
 let selectedService = document.querySelector('.selected-service');
 let wantedService;
 
+console.log("Booking handler ready");
+
 function runAPI(serviceName, serviceDescription, serviceDate, serviceTime) {
     const xhr = new XMLHttpRequest();
-    var test = xhr.open("GET", "http://localhost:9090/api/?serviceReq=" + serviceName + "&serviceDesc=" + serviceDescription + "&serviceDate=" + serviceDate + "&serviceTime=" + serviceTime);
+    var test = xhr.open("GET", "http://127.0.0.1:3000/api?serviceReq=" + serviceName + "&serviceDesc=" + serviceDescription + "&serviceDate=" + serviceDate + "&serviceTime=" + serviceTime);
     console.log(test);
     xhr.send();
     xhr.responseType = "json";
