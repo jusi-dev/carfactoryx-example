@@ -5,20 +5,10 @@ let wantedService;
 console.log("Booking handler ready");
 
 function runAPI(serviceName, serviceDescription, serviceDate, serviceTime) {
-    const xhr = new XMLHttpRequest();
-    var test = xhr.open("GET", "http://127.0.0.1:3000/api?serviceReq=" + serviceName + "&serviceDesc=" + serviceDescription + "&serviceDate=" + serviceDate + "&serviceTime=" + serviceTime);
-    console.log(test);
-    xhr.send();
-    xhr.responseType = "json";
-    xhr.onload = () => {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        const data = xhr.response;
-        console.log(data);
-    } else {
-        console.log(`Error: ${xhr.status}`);
-    }
-    };
-}
+    fetch("https://carfactoryx.justin-winistoerfer.dev:443/api?serviceReq=" + serviceName + "&serviceDesc=" + serviceDescription + "&serviceDate=" + serviceDate + "&serviceTime=" + serviceTime)
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+};
 
 bookSerive3.addEventListener('click', () => {
     var li = document.createElement("li");

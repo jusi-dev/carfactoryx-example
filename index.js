@@ -118,7 +118,7 @@ async function listEvents(auth) {
 const express = require('express');
 const app = express();
 var cors = require('cors');
-const port = 3000;
+const port = 443;
 
 app.use(cors());
 
